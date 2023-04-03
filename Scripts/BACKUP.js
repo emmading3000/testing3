@@ -138,7 +138,7 @@ function setup() {
     snake.push(createVector(0, 0));
     prevMouseX = mouseX;
     prevMouseY = mouseY;
-    createCanvas(windowWidth, windowHeight-85);
+    createCanvas(windowWidth, windowHeight-45);
     for(let i = 0;i<width/10;i++){
     particles.push(new Particle());
     }
@@ -174,7 +174,7 @@ function draw () {
     textFont(fonts[currentFontIndex]);
     noStroke();
 
-    if (clickCount > 0) {
+    if (1 == 1) {
         let textX1 = 30;
         let textY1 = 30;
         let textY2 = 130;
@@ -406,80 +406,62 @@ function draw () {
     prevMouseX = mouseX;
     prevMouseY = mouseY;
 
-    let ellipseSpeed = 4;
-    let ellipseX = 1350 + frameCount*ellipseSpeed;
-    if (ellipseX >= windowWidth - 150) {
-        frameCount = 0;
-    }
-
     if (clickCount == 0 && switchBool == true) {
-        fill('#0f0f0f');
+        fill(20, 86, 140);
         rect(0, 0, windowWidth, windowHeight-45);
         textFont('Georgia');
-        strokeWeight(12);
-        stroke(200, 152, 105);
-        fill(151, 95, 77);
+        strokeWeight(20);
+        stroke(214, 208, 126);
+        fill(191, 153, 71);
         textSize(100);
         text('E  X  P  L  O  R  E', 500, 500);
         textSize(80);
         text('r a n n s a i c h', 500, 630);
         noStroke();
-
-        fill(200,169,169)
-        ellipse(ellipseX, 465, 25, 25);
     }
     if (clickCount == 0 && switchBool == false) {
-        fill('#0f0f0f');
+        fill(20, 86, 140);
         rect(0, 0, windowWidth, windowHeight-45);
         textFont('Georgia');
-        strokeWeight(12);
-        stroke(200, 152, 105);
-        fill(151, 95, 77);
+        strokeWeight(20);
+        stroke(214, 208, 126);
+        fill(191, 153, 71);
         textSize(100);
         text('E  X  P  L  O  R  E', 500, 500);
-        stroke(175, 109, 100, 75);
+        stroke(214, 208, 126, 75);
         fill(191, 153, 71, 75);
         textSize(80);
         text('r a n n s a i c h', 500, 630);
         noStroke();
-
-        fill(200,169,169);
-        ellipse(ellipseX, 465, 25, 25);
     }
-
     noStroke();
-            
-    if (spaceCount > 0) {
-        clickCount = 0;
-        spaceCount = 0;
-    }
 }
 
 function mouseWheel(event) {
     // check if zoom is within min and max bounds
     if (zoom >= zoomMin && zoom <= zoomMax) {
-    // calculate zoom amount based on mouse wheel delta
-    let zoomChange = map(event.delta, -100, 100, -zoomRate, zoomRate);
-    // update zoom level
-    zoom += zoomChange;
-    // clamp zoom level within min and max bounds
-    zoom = constrain(zoom, zoomMin, zoomMax);
-    // translate canvas to zoom towards center of page
-    let mx = width / 2;
-    let my = height / 2;
-    translate(mx, my);
-    scale(1 + zoomChange);
-    translate(-mx, -my);
+      // calculate zoom amount based on mouse wheel delta
+      let zoomChange = map(event.delta, -100, 100, -zoomRate, zoomRate);
+      // update zoom level
+      zoom += zoomChange;
+      // clamp zoom level within min and max bounds
+      zoom = constrain(zoom, zoomMin, zoomMax);
+      // translate canvas to zoom towards center of page
+      let mx = width / 2;
+      let my = height / 2;
+      translate(mx, my);
+      scale(1 + zoomChange);
+      translate(-mx, -my);
     }
-}
+  }
 
-function mousePressed() {
+  function mousePressed() {
     currentFontIndex = (currentFontIndex + 1) % fonts.length;
     clickCount++;
-}
+  }
 
-function keyPressed() {
+  function keyPressed() {
     if (key === ' ') {
-        spaceCount++;
+      spaceCount++;
     }
-}
+  }
