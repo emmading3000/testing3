@@ -1,0 +1,30 @@
+.defaultCanvas0 {
+    background-color: black;
+    word-wrap: break-word;
+    inline-size: 2979px;
+}
+
+.js {
+    background-color: black;
+    word-wrap: break-word;
+    /* inline-size: 2979px; */
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+p {
+    word-wrap: break-word;
+    /* inline-size: 2979px; */
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.backgroundText {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 50px;
+    color: red;
+}
